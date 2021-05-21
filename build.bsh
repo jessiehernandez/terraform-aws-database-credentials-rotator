@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Safe mode
+set -e
+IFS=$'\n\t'
+
+cd src
+GOOS=linux go build -ldflags="-s -w" -o ../build/bootstrap *.go ;
+zip -j ../build/package.zip ../build/bootstrap ;
