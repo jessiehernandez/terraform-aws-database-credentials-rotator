@@ -25,16 +25,12 @@ build.bsh (Compiles the Lambda assets)
 
 ## Inputs
 
-| Name           | Description                          | Type     | Default | Required |
-|----------------|--------------------------------------|----------|---------|----------|
-| account        | Name of the account.                 | `string` |         | yes      |
-| application    | Value for the application tag.       | `string` |         | yes      |
-| description    | Value for the description tag.       | `string` |         | yes      |
-| environment    | Environment.                         | `string` |         | yes      |
-| name           | Name of the rotator Lambda function. | `string` | database-password-rotator | no |
-| organization   | Organization.                        | `string` | palig                     | no |
-| vpc_subnet_ids | ID of the VPC subnets to use for the rotator Lambda. | `list(string)` | | yes |
-| vpc_id         | ID of the VPC in which to place the rotator Lambda.  | `string`       | | yes |
+| Name           | Description                                          | Type           | Default                    | Required |
+|----------------|------------------------------------------------------|----------------|----------------------------|----------|
+| description    | Description of the rotator Lambda function.          | `string`       | Database password rotator. | no       |
+| name           | Name of the rotator Lambda function.                 | `string`       | database-password-rotator  | no       |
+| tags           | Tags to apply to the Lambda function.                | `map(string)`  | `{}`                       | no       |
+| vpc_subnet_ids | ID of the VPC subnets to use for the rotator Lambda. | `list(string)` |                            | yes      |
 
 ## Outputs
 

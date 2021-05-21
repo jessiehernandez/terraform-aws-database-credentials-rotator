@@ -7,11 +7,6 @@ variable "vpc_subnet_ids" {
   type        = list(string)
 }
 
-variable "vpc_id" {
-  description = "ID of the VPC in which to place the rotator Lambda."
-  type        = string
-}
-
 # ------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
 # ------------------------------------------------------------------------------
