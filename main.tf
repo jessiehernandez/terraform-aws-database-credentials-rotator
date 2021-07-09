@@ -11,6 +11,7 @@ module "rotator_lambda" {
   create_role            = var.create_role
   description            = var.description
   function_name          = var.name
+  handler                = "notneeded"
   lambda_role            = var.lambda_role
   local_existing_package = local.package_file
   memory_size            = 128
