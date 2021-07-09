@@ -11,10 +11,22 @@ variable "vpc_subnet_ids" {
 # OPTIONAL PARAMETERS
 # ------------------------------------------------------------------------------
 
+variable "create_role" {
+  default     = true
+  description = "Controls whether an IAM role for the rotator Lambda should be created."
+  type        = bool
+}
+
 variable "description" {
     default     = "Database password rotator."
     description = "Description of the rotator Lambda function."
     type        = string
+}
+
+variable "lambda_role" {
+  default     = ""
+  description = "IAM role ARN attached to the Lambda Function. This governs both who / what can invoke your Lambda Function, as well as what resources our Lambda Function has access to. See Lambda Permission Model for more details."
+  type        = string
 }
 
 variable "name" {
