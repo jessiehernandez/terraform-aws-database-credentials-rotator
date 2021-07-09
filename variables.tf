@@ -28,3 +28,9 @@ variable "tags" {
   description = "Tags to apply to the Lambda function."
   type        = map(string)
 }
+
+variable "vpc_security_group_ids" {
+  default     = null
+  description = "List of security group IDs when the rotator function should run inside a VPC."
+  type        = list(string)
+}

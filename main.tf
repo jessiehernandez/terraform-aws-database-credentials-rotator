@@ -15,6 +15,7 @@ module "rotator_lambda" {
   runtime                = "provided.al2"
   tags                   = var.tags
   timeout                = 180
+  vpc_security_group_ids = var.vpc_security_group_ids
   vpc_subnet_ids         = var.vpc_subnet_ids
 }
 
