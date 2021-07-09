@@ -8,6 +8,7 @@ module "rotator_lambda" {
 
   attach_network_policy  = true
   create_package         = false
+  create_role            = false
   description            = var.description
   function_name          = var.name
   local_existing_package = local.package_file
