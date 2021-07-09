@@ -29,7 +29,9 @@ build.bsh (Compiles the Lambda assets)
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_create_role"></a> [create\_role](#input\_create\_role) | Controls whether an IAM role for the rotator Lambda should be created. | `bool` | `true` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description of the rotator Lambda function. | `string` | `"Database password rotator."` | no |
+| <a name="input_lambda_role"></a> [lambda\_role](#input\_lambda\_role) | IAM role ARN attached to the Lambda Function. This governs both who / what can invoke your Lambda Function, as well as what resources our Lambda Function has access to. See Lambda Permission Model for more details. | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the rotator Lambda function. | `string` | `"database-password-rotator"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to the Lambda function. | `map(string)` | `{}` | no |
 | <a name="input_vpc_security_group_ids"></a> [vpc\_security\_group\_ids](#input\_vpc\_security\_group\_ids) | List of security group IDs when the rotator function should run inside a VPC. | `list(string)` | `null` | no |
