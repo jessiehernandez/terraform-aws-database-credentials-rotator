@@ -7,13 +7,15 @@ usually be used in tandem with the `autorotated-database-credentials` module.
 
 ## Contents
 
-* [File Structure](#file-structure)
-* [Inputs](#inputs)
-* [Outputs](#outputs)
-* [Expected Secret Format](#expected-secret-format)
-* [Usage](#usage)
-* [Making Changes to the Rotator](#making-changes-to-the-rotator)
-* [Author(s)](#authors)
+- [Database Credentials Rotator](#database-credentials-rotator)
+  - [Contents](#contents)
+  - [File Structure](#file-structure)
+  - [Inputs](#inputs)
+  - [Outputs](#outputs)
+  - [Expected Secret Format](#expected-secret-format)
+  - [Usage](#usage)
+  - [Making Changes to the Rotator](#making-changes-to-the-rotator)
+  - [Author(s)](#authors)
 
 ## File Structure
 
@@ -25,19 +27,19 @@ build.bsh (Compiles the Lambda assets)
 
 ## Inputs
 
-| Name           | Description                                          | Type           | Default                    | Required |
-|----------------|------------------------------------------------------|----------------|----------------------------|----------|
-| description    | Description of the rotator Lambda function.          | `string`       | Database password rotator. | no       |
-| name           | Name of the rotator Lambda function.                 | `string`       | database-password-rotator  | no       |
-| tags           | Tags to apply to the Lambda function.                | `map(string)`  | `{}`                       | no       |
-| vpc_subnet_ids | ID of the VPC subnets to use for the rotator Lambda. | `list(string)` |                            | yes      |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_description"></a> [description](#input\_description) | Description of the rotator Lambda function. | `string` | `"Database password rotator."` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of the rotator Lambda function. | `string` | `"database-password-rotator"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to the Lambda function. | `map(string)` | `{}` | no |
+| <a name="input_vpc_security_group_ids"></a> [vpc\_security\_group\_ids](#input\_vpc\_security\_group\_ids) | List of security group IDs when the rotator function should run inside a VPC. | `list(string)` | `null` | no |
+| <a name="input_vpc_subnet_ids"></a> [vpc\_subnet\_ids](#input\_vpc\_subnet\_ids) | ID of the VPC subnets to use for the rotator Lambda. | `list(string)` | n/a | yes |
 
 ## Outputs
 
-| Name                | Description                                                       |
-|---------------------|-------------------------------------------------------------------|
-| rotation_lambda_arn | ARN to the rotator Lambda function.                               |
-| security_group_id   | ID of the security group assigned to the rotator Lambda function. |
+| Name | Description |
+|------|-------------|
+| <a name="output_rotation_lambda_arn"></a> [rotation\_lambda\_arn](#output\_rotation\_lambda\_arn) | ARN to the rotator Lambda function. |
 
 ## Expected Secret Format
 
