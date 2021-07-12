@@ -24,7 +24,7 @@ module "rotator_lambda" {
 resource "aws_iam_role_policy" "rotator_lambda" {
   name   = "secrets-manager-access"
   policy = data.aws_iam_policy_document.rotator_lambda.json
-  role   = module.rotator_lambda.lambda_role_arn
+  role   = module.rotator_lambda.lambda_role_name
 }
 
 resource "aws_lambda_permission" "allow_secrets_manager" {
